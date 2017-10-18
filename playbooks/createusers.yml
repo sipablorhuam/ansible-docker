@@ -1,13 +1,16 @@
-- file:
+- name: Creating home directory
+  file:
     path: "{{item}}"
     state: directory
   with_items:
     - /opt/app1
     - /opt/app2
-- user:
-    name: "{{item.name}}"
+
+- name: Creating users
+  user:
+    name: "{{item}}"
     group: apps
-    home: "{{item.home}}"
+    home: "/opt/{{item}}"
   with_items:
-    - {name: 'app1', home: '/opt/app1'}
-    - {name: 'app2', home: '/opt/app2'}
+    - app1
+    - app2

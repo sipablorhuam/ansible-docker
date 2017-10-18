@@ -10,6 +10,8 @@
     state: started
     expose:
       - 9977
+    ports:
+      - "9977"
 
 #- name: Pushing image
 #  docker_login:

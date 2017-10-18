@@ -5,5 +5,5 @@ On playbooks you can find a series of playbooks made for the practice test, ever
 the tasks needed to run for each point of the practice test. The main.yml only contains the respective includes
 for each of the tasks.
 
-For tests I have been using the command "ansible-playbook playbooks/main.yml -i inventory/hosts.yml".
+For tests I have been using the command "ansible-playbook ~/ansible/playbooks/main.yml -i ~/ansible/inventory/hosts.yml -vvv".
 

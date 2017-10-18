@@ -1,0 +1,8 @@
+- hosts: 67.207.83.169
+  gather_facts: true
+  tasks:
+    - include_tasks: ~/ansible/playbooks/creategroup.yml
+    - include_tasks: ~/ansible/playbooks/createusers.yml
+    - include_tasks: ~/ansible/playbooks/copy.yml
+    - include_tasks: ~/ansible/playbooks/nginx.yml
+ 

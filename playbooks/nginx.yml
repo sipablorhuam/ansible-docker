@@ -1,0 +1,32 @@
+- name: Build nginx image
+  command: docker build -t megaten88/practice:v1 .
+  args:
+   chdir: ~/dockerTest
+
+- name: Launch and Setup NGINX
+  docker:
+    name: practice
+    image: megaten88/practice:v1
+    state: started
+    expose:
+      - 9977
+
+#- name: Pushing image
+#  docker_login:
+#    username: megaten88
+#    password: !vault |
+#         $ANSIBLE_VAULT;1.1;AES256
+#          61336164353764623336363036366466656166616261616333396239333663316163613839353034
+#          3231343066343638323761663365353564376631663433360a616333316263336436353634353038
+#          65636161663262336139363764376334643537363332343032623363343131333766663837326163
+#          3737646331326539310a326662633963663938353139326433396531383761386263373139383738
+#          6634
+#    email: marialejandra200918@gmail.com
+
+#- name: debug this
+#  debug: var= "{{password | to_json}}"
+
+- name: Docker Push
+  command: docker push megaten88/practice:v1
+
+

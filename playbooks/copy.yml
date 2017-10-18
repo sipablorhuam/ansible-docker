@@ -1,0 +1,20 @@
+- name: Copy files to VM2
+  copy:
+   src: "{{item}}"
+   dest: ~/dockerTest/
+   owner: root
+   group: root
+   mode: 0644
+  with_fileglob:
+   - ~/ansible/playbooks/google.html
+   - ~/ansible/playbooks/Dockerfile
+
+- name: Copy google_files
+  copy:
+   src: ~/ansible/playbooks/google_files
+   dest: ~/dockerTest/
+   directory_mode: yes
+   owner: root
+   group: root
+   mode: 0644
+

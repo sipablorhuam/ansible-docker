@@ -1,0 +1,4 @@
+- name: Creating group
+  group:
+    name: "apps"
+    state: present
